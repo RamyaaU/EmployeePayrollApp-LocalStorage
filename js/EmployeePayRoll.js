@@ -15,7 +15,6 @@ class EmployeePayRoll {
         else {
             throw "InCorrect name";
         }
-
         this._name = name;
     }
 
