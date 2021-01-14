@@ -1,3 +1,4 @@
+  
 window.addEventListener('DOMContentLoaded', (event) => {
     const name = document.querySelector('#name');
     const textError = document.querySelector('.text-error');
@@ -100,3 +101,38 @@ function createAndUpdateStorage(employeePayrollData) {
     alert(employeePayrollList.toString());
     localStorage.setItem("EmployeePayrollList", JSON.stringify(employeePayrollList))
 }
+
+// UC 5
+const resetForm = () => {
+    setValue('#name',' ');
+    unsetSelectedValues('[name=profile]');
+    unsetSelectedValues('[name=gender]');
+    unsetSelectedValues('[name=department]');
+    setValueSalary('#salary','');
+    setValueSalary('#zsalary-output text','');
+    setValueSalary('#notes','');
+    setValue('#day','1');
+    setValue('#month','January');
+    setValue('#year','2020');
+}
+
+const unsetSelectedValues = (propertyValue) => {
+    let allItems = document.querySelectorAll(propertyValue);
+    allItems.forEach(item => {
+        item.checked = false;
+    });
+}
+
+const setValue = (id, value) => {
+    const element = document.querySelector(id);
+    element.value = value;
+}
+
+const setValueSalary = (id, value) => {
+    const salary = document.querySelector('#salary');
+    const output = document.querySelector('.salary-output');
+    output.textContent = salary.value;
+    const element = document.querySelector(id);
+    element.value = value;
+}
+
