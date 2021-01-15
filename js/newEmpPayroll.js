@@ -1,4 +1,3 @@
-  
 window.addEventListener('DOMContentLoaded', (event) => {
     const name = document.querySelector('#name');
     const textError = document.querySelector('.text-error');
@@ -103,36 +102,36 @@ function createAndUpdateStorage(employeePayrollData) {
 }
 
 // UC 5
-const resetForm = () => {
-    setValue('#name',' ');
+const resetForm=()=>{
+    setValue('#name','');
     unsetSelectedValues('[name=profile]');
     unsetSelectedValues('[name=gender]');
     unsetSelectedValues('[name=department]');
-    setValueSalary('#salary','');
-    setValueSalary('#zsalary-output text','');
-    setValueSalary('#notes','');
+    setValueSalaryMethod('#salary','');
+    setValueSalaryMethod('.salary-output text','');
+    setValue('#notes','');
     setValue('#day','1');
     setValue('#month','January');
     setValue('#year','2020');
 }
 
-const unsetSelectedValues = (propertyValue) => {
-    let allItems = document.querySelectorAll(propertyValue);
-    allItems.forEach(item => {
-        item.checked = false;
+const unsetSelectedValues=(propertyValue)=>{
+    let allItems=document.querySelectorAll(propertyValue);
+    allItems.forEach(item=>{
+        item.checked=false;
     });
 }
 
-const setValue = (id, value) => {
-    const element = document.querySelector(id);
-    element.value = value;
-}
-
-const setValueSalary = (id, value) => {
-    const salary = document.querySelector('#salary');
-    const output = document.querySelector('.salary-output');
+const setValueSalaryMethod=(id,value)=>{
+    var salary = document.querySelector('#salary');
+    var output = document.querySelector('.salary-output');
     output.textContent = salary.value;
-    const element = document.querySelector(id);
-    element.value = value;
+    const element=document.querySelector(id);
+    element.value=value;
 }
 
+
+const setValue=(id,value)=>{
+    const element=document.querySelector(id);
+    element.value=value;
+}
